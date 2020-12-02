@@ -1,0 +1,26 @@
+{
+  "name": "projects_lab",
+  "version": "1.0.0",
+  "description": "description",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dmitriy-uvin/projects_lab.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dmitriy-uvin/projects_lab/issues"
+  },
+  "homepage": "https://github.com/dmitriy-uvin/projects_lab#readme",
+  "dependencies": {
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
