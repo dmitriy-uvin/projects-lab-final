@@ -1,0 +1,25 @@
+const dbConfig = require('../config/database');
+const fs = require('fs');
+const path = require('path');
+const mysql = require('mysql2');
+const chalk = require('chalk');
+
+const sqlScript = fs.readFileSync(path.join(__dirname, '../src/sql/ddl.sql')).toString();
+
+const connection = mysql.connect({
+    host: dbConfig.DATABASE_HOST,
+    user: dbConfig.DATABASE_USERNAME,
+    password: dbConfig.DATABASE_PASSWORD,
+    database: dbConfig.DATABASE_NAME,
+    multipleStatements: true
+});
+console.log(chalk.green('Creating tables...'));
+
+connection.query(sqlScript, function (error) {
+    if (error) throw error;
+    connection.query(
+        `SELECT table_name FROM information_schema.tables WHERE table_schema = '${dbConfig.DATABASE_NAME}'`,
+        function(err, tables){
+            console.log(tables);
+        });
+});

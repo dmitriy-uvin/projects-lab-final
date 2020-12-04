@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node ./tests",
+    "postinstall": "node ./build"
   },
   "repository": {
     "type": "git",
@@ -20,6 +21,9 @@
   },
   "homepage": "https://github.com/dmitriy-uvin/projects_lab#readme",
   "dependencies": {
+    "chalk": "^4.1.0",
+    "cli-table3": "^0.6.0",
+    "lodash-node": "^3.10.2",
     "mysql2": "^2.2.5",
     "sequelize": "^6.3.5"
   }
